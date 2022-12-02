@@ -10,11 +10,11 @@ export const Layout : FC<IProps> = ({children}) => {
   return (
     <>
       <S.Header>
-        <h1>REDAÇÃO NOTA 1000</h1>
+        <Link href={'/'}>
+          <h1>REDAÇÃO NOTA 1000</h1>
+        </Link>
       </S.Header>
-      <S.Children>
-        {children}
-      </S.Children>
+      <S.Children>{children}</S.Children>
       <S.Footer>
         <p>
           By: <Link href={'https://github.com/Mornieur'}>Mornieur</Link> &{' '}
