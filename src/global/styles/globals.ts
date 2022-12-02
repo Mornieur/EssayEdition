@@ -22,7 +22,7 @@ body {
   width:100%;
 
   scrollbar-width: thin;
-  
+
 
 }
 
@@ -34,7 +34,7 @@ h2 {
 
   scroll-behavior: smooth;
   overflow-x: hidden;
-  
+
 
 
 :root {
@@ -46,9 +46,9 @@ h2 {
   --white-50: #F4F4F4;
   --white-100: #f8f8f8;
 
-  // Grey Colors 
-  
-  
+  // Grey Colors
+
+
   --grey-100: #dddddd;
   --grey-400: #8a8a8a;
   --grey-450: #868686;
@@ -83,7 +83,7 @@ h2 {
 
   --vereda-blue: #1E439B;
 
-  
+
 
   --name-blue: #1f9aff;
 
