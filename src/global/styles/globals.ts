@@ -67,7 +67,23 @@ h2 {
   --yellow-500: #ffd706;
   --yellow-600: #FFD010;
 
+  // Green Colors
 
+  --green-100: #01c5c1;
+  --green-500: #0ea900;
+  --green-900: #176b6e;
+
+  // Red Colors
+
+  --red-700: #da3231;
+
+  // Orange Colors
+
+  --orange-500: #f39116;
+
+  // Purple Colors
+
+  --purple-600: #865cb2;
 
   // Blue Colors
 
