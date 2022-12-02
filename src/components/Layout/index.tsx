@@ -10,7 +10,7 @@ export const Layout : FC<IProps> = ({children}) => {
   return (
     <>
       <S.Header>
-        <h2>REDAÇÃO NOTA 1000</h2>
+        <h1>REDAÇÃO NOTA 1000</h1>
       </S.Header>
       <S.Children>
         {children}
