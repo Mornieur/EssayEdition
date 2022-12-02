@@ -19,7 +19,7 @@ export const Editor = styled.div<IProps>`
     transition: all 0.5s;
   }
   .rdw-editor-toolbar {
-    display: ${({mode}) => mode === 'post' ? "none" : "flex"};
+    display: ${({ mode }) => (mode === 'post' ? 'none' : 'flex')};
     align-items: center;
     flex-wrap: wrap;
     cursor: pointer;
@@ -41,36 +41,12 @@ export const Editor = styled.div<IProps>`
     }
   }
   .rdw-editor-main {
-    height: 26rem !important;
+    height: calc(100vh - 20rem)  !important;
     background-color: #f0f0f0;
     overflow-y: scroll;
-    @media (min-height: 535px) {
-      height: 27vh;
-    }
-    @media (min-height: 580px) {
-      height: 31vh;
-    }
-    @media (min-height: 630px) {
-      height: 35vh;
-    }
-    @media (min-height: 700px) {
-      height: 39vh;
-    }
-    @media (min-height: 760px) {
-      height: 42vh;
-    }
-    @media (min-height: 840px) {
-      height: 45vh;
-    }
-    @media (min-height: 910px) {
-      height: 48vh;
-    }
-    @media (min-height: 1010px) {
-      height: 51vh;
-    }
-    @media (max-width: 420px) {
-      height: 18rem;
-    }
+    /* @media (min-height: 790px) {
+      height: calc(100vh - 20rem)  !important;
+    } */
   }
   .DraftEditor-root {
     padding: 1rem;

@@ -13,6 +13,9 @@ export const Header = styled.header`
   h1 {
     color: var(--yellow-600);
     font-size: 2rem;
+    @media (max-width: 380px) {
+      font-size: 1.5rem;
+    }
   }
 `;
 

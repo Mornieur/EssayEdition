@@ -7,12 +7,15 @@ export const Container = styled.main`
   padding: 2rem;
   width: 90%;
   margin: auto;
-  h2{
+  h2 {
     font-size: 2rem;
     text-align: center;
   }
-  .two-columns{
+  .two-columns {
     display: flex;
     gap: 2rem;
+    @media (max-width: 700px) {
+      flex-direction: column;
+    }
   }
 `;
