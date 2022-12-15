@@ -6,13 +6,13 @@ export const CorrectedWording = () => {
       <h2>Redação Corrigida</h2>
       {localStorage.getItem('essay-corrected') ? (
         <div
-          dangerouslySetInnerHTML={{ __html: localStorage.getItem('essay-sent')! }}
+          dangerouslySetInnerHTML={{
+            __html: localStorage.getItem('essay-corrected')!,
+          }}
           className={'post'}
         ></div>
       ) : (
-          <div>
-            Ops! Parece que sua redação ainda não foi corrigida :/
-          </div>
+        <div>Ops! Parece que sua redação ainda não foi corrigida :/</div>
       )}
     </S.Container>
   );
