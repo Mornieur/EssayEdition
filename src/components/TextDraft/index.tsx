@@ -1,8 +1,9 @@
-import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
+import { Component, Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
 import * as S from './styled'
 import draftToHtml from "draftjs-to-html";
-import { EditorState, RawDraftContentState, convertToRaw, ContentState, convertFromHTML, convertFromRaw } from "draft-js";
+import { EditorState, RawDraftContentState, convertToRaw, ContentState, convertFromHTML, convertFromRaw, Modifier } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
+import PropTypes from 'prop-types';
 
 interface IProps {
   setDataToPost: Dispatch<SetStateAction<any>>;
@@ -10,6 +11,19 @@ interface IProps {
   post?: any;
   mode: string;
 }
+
+const CustomOption : FC<any> = ({ editorState }: any) => {
+  const addStar = () => {
+    const contentState = Modifier.replaceText(
+      editorState.getCurrentContent(),
+      editorState.getSelection(),
+      '⭐',
+      editorState.getCurrentInlineStyle(),
+    );
+    EditorState.push(editorState, contentState, 'insert-characters');
+  };
+  return <div onClick={addStar}>⭐</div>;
+};
 
 export const TextDraft: FC<IProps> = ({ setDataToPost, dataToPost, post, mode }) => {
   const [editorState, setEditorState] = useState(() =>
@@ -72,24 +86,27 @@ export const TextDraft: FC<IProps> = ({ setDataToPost, dataToPost, post, mode })
 
   return (
     <S.Editor className="editor" mode={mode}>
-      {mode === "put" && (
+      {mode === 'put' && (
         <Editor
           // editorState={editorDefaultState}
           onEditorStateChange={onEditorStateChange}
-          placeholder={"No que você está pensando?"}
+          placeholder={'No que você está pensando?'}
           spellCheck={true}
           stripPastedStyles={true}
           defaultEditorState={editorDefaultState}
+          // toolbarCustomButtons={[
+          //   <CustomOption editorState={editorDefaultState} />,
+          // ]}
           toolbar={{
             fontFamily: {
               options: [
-                "Arial",
-                "Georgia",
-                "Impact",
-                "Tahoma",
-                "Times New Roman",
-                "Verdana",
-                "Montserrat",
+                'Arial',
+                'Georgia',
+                'Impact',
+                'Tahoma',
+                'Times New Roman',
+                'Verdana',
+                'Montserrat',
               ],
             },
             inline: { inDropdown: true },
@@ -105,20 +122,20 @@ export const TextDraft: FC<IProps> = ({ setDataToPost, dataToPost, post, mode })
             },
           }}
           mention={{
-            separator: " ",
-            trigger: "@",
+            separator: ' ',
+            trigger: '@',
           }}
           hashtag={{
-            separator: " ",
-            trigger: "#",
+            separator: ' ',
+            trigger: '#',
           }}
         />
       )}
-      {mode === "post" && (
+      {mode === 'post' && (
         <Editor
           editorState={editorState}
           onEditorStateChange={onEditorStateChange}
-          placeholder={"Digite a redação aqui"}
+          placeholder={'Digite a redação aqui'}
           spellCheck={true}
           stripPastedStyles={true}
           // toolbar={{
