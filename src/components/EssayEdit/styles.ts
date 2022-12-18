@@ -8,7 +8,7 @@ export const Container = styled.div`
   background-color: #f1f1f1;
 `;
 
-export const Title = styled.h3`
+export const Title = styled.div`
   width: 100%;
   height: 70px;
   display: flex;
