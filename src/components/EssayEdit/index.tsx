@@ -9,8 +9,8 @@ export const EssayEdit = () => {
         <h1>Edição de redação</h1>
       </S.Title>
 
-      {/* <DrawRectangle></DrawRectangle> */}
-      <DrawingCanvas></DrawingCanvas>
+      <DrawRectangle></DrawRectangle>
+      {/* <DrawingCanvas></DrawingCanvas> */}
       <S.SubmitImage></S.SubmitImage>
     </S.Container>
   );
