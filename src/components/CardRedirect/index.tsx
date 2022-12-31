@@ -1,6 +1,6 @@
-import Link from "next/link"
-import { FC, ReactNode } from "react";
-import * as S from './styles'
+import Link from 'next/link';
+import { FC, ReactNode } from 'react';
+import * as S from './styles';
 
 interface IProps {
   backgroundCard: string;
