@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 interface IProps {
-  backgroundCard: string;
+  backgroundCard?: string;
 }
 
 export const Container = styled.article<IProps>`
